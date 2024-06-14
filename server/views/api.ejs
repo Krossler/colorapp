@@ -9,7 +9,7 @@
             <li><a href="/">Home</a></li>
             <li><a href="/api">API</a></li>
             <li><a href="/about">About</a></li>
-            <li><a href="/contact">GitHub</a></li>
+            <li><a target="_blank" href="https://github.com/Krossler/colorapp">GitHub</a></li>
         </ul>
     </nav>
 
@@ -22,7 +22,7 @@
         <ul>
             <% colors.forEach(color => { %>
                 <li class="color-item">
-                    <div class="color-box" style="background-color: <%= color.hex %>; color: black;"></div>
+                    <div class="color-box" style="background-color: <%= color.hex %>"></div>
                     <div >
                         <p class="color-info"><%= color.name %> - <%= color.hex %></p>
                     </div>
