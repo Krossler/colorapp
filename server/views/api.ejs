@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="/styles.css" />
+</head>
+<body>
+    <nav>
+        <ul class="navbar">
+            <li><a href="/">Home</a></li>
+            <li><a href="/api">API</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/contact">GitHub</a></li>
+        </ul>
+    </nav>
+
+    <section class="header">
+        <h1>Color List API</h1>
+    </section>
+
+    <section class="color-list">
+        <h2>Colors</h2>
+        <ul>
+            <% colors.forEach(color => { %>
+                <li class="color-item">
+                    <div class="color-box" style="background-color: <%= color.hex %>; color: black;"></div>
+                    <div >
+                        <p class="color-info"><%= color.name %> - <%= color.hex %></p>
+                    </div>
+                </li>
+            <% }) %>
+        </ul>
+    </section>
+</body>
+</html>

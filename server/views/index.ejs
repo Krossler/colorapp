@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="/styles.css" />
+</head>
+<body>
+    
+
+        <nav>
+            <ul class="navbar">
+                <li><a href="/">Home</a></li>
+                <li><a href="/api">API</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/contact">GitHub</a></li>
+            </ul>
+        </nav>
+
+        <section class="header">
+            <h1>Color List API</h1>
+        </section>
+        <h2>This is a simple API for managing colors.</h2>
+
+        <section class="content">
+            <div>
+                <h3>GET</h3>
+                <p>To get a list of colors, use GET /api.</p>
+                <p>To get a specific color by name, use GET /api/:name.</p>
+                <p>Example: GET /api/red</p>
+            </div>
+            <div>
+                <h3>POST</h3>
+                <p>To add a new color, use POST /api with the color name and hex code in the request body.</p>
+                <p>Example: POST /api { "name": "red", "hex": "#ff0000" }</p>
+            </div>
+            <div>
+                <h3>DELETE</h3>
+                <p>To delete a color, use DELETE /api/:name.</p>
+                <p>Example: DELETE /api/:name</p>
+            </div>
+            <div>
+                <h3>PUT</h3>
+                <p>To update a color, use PUT /api/:name with the new color name and hex code in the request body.</p>
+                <p>Example: PUT /api/red { "name": "red", "hex": "#ff0000" }</p>
+            </div>
+        </section>
+    
+</body>
+
+</html>
