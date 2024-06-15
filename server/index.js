@@ -4,8 +4,7 @@ const cors = require('cors');
 const path = require('path');
 const Color = require('./models/colors.js');
 
-const app = express();
-const port = 3001;
+// DATABASE
 
 const mongoURI = 'mongodb+srv://krossler:krossler123@react-fullstack.tvrikmx.mongodb.net/?retryWrites=true&w=majority&appName=react-fullstack';
 
@@ -18,6 +17,11 @@ mongoose.connect(mongoURI, {
     .catch((err) => {
         console.error('Erro ao conectar ao MongoDB:', err);
     });
+
+// SERVER CONST
+
+const app = express();
+const port = 3001;
 
 // MIDDLEWARES
 
@@ -44,9 +48,11 @@ app.use(express.static(path.join(__dirname, 'public')))
         res.status(500).json({ message: err.message });
     }
   });
+
+  app.get('/about', (req, res) => {
+    res.render('about');
+  });
   
-
-
 // GET MODULES
 
 app.get('/api', async (req, res) => {
