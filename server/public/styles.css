@@ -21,15 +21,12 @@ body{
 @keyframes moveBackground {
     0% {
         background-position: 0% 50%;
-        filter: brightness(95%);
     }
     50% {
         background-position: 100% 50%;
-        filter: brightness(100%);
     }
     100% {
         background-position: 0% 50%;
-        filter: brightness(110%);
     }
 }
 
@@ -47,7 +44,7 @@ body{
         text-shadow: 4px 5px 16px rgba(255, 255, 255, 0.3);
     }
     100% {
-        text-shadow: 4px 6px 17px rgba(255, 255, 255, 0.2);
+        text-shadow: 5px 5px 14px rgba(255, 255, 255, 0.2);
     }
 }
 
@@ -84,8 +81,15 @@ body{
     margin: 0 auto;
 }
 
+.content {
+    padding: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.29);
+    background: rgba(255, 255, 255, 0.044);
+    border-radius: 15px;
+}
+
 .content div{
-    margin-bottom: 40px;
+    margin-top: 30px;
 }
 
 
@@ -96,7 +100,7 @@ h1, h2, h3, p{
 
 h1{
     color: rgb(191, 191, 191);
-    margin-top: 20px;
+    margin-block: 20px;
     font-size: 62px;
     font-weight: 600;
 }
@@ -125,13 +129,11 @@ p{
 }
 
 .color-list {
-    backdrop-filter: blur(10px);
-    background-color: rgba(255, 255, 255, 0.045);
-    border: 1px solid rgb(89, 89, 89);
+    border: 1px solid rgba(255, 255, 255, 0.29);
+    background: rgba(255, 255, 255, 0.044);
     border-radius: 10px;
     padding: 20px;
     text-align: center;
-    margin-top: 20px;
 }
 
 .color-list ul {
