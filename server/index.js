@@ -114,7 +114,7 @@ app.put('/api/:name', async (req, res) => {
     color.hex = hex;
     const updatedColor = await color.save();
 
-    res.json(updatedColor); // Retornar a cor atualizada como resposta
+    res.json(updatedColor);
   } catch (err) {
     res.status(400).json({ message: err.message });
   }
