@@ -6,7 +6,7 @@ const Color = require('./models/colors.js');
 
 // DATABASE
 
-const mongoURI = 'mongodb+srv://krossler:krossler123@react-fullstack.tvrikmx.mongodb.net/?retryWrites=true&w=majority&appName=react-fullstack';
+const mongoURI = 'mongodb+srv://krossler:password@react-fullstack.tvrikmx.mongodb.net/?retryWrites=true&w=majority&appName=react-fullstack';
 
 mongoose.connect(mongoURI, {
   dbName: 'colorlistapp'
