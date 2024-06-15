@@ -81,6 +81,16 @@ app.post('/api', async (req, res) => {
   const { name, hex } = req.body;
 
   try {
+    const hexRegex = /^#[0-9a-fA-F]{6}$/;
+    if (!hexRegex.test(hex)) {
+      return res.status(400).json({ message: 'Código HEX inválido' });
+    }
+
+    const existingColor = await Color.findOne({ $or: [{ name }, { hex }] });
+    if (existingColor) {
+      return res.status(400).json({ message: 'Essa cor já está registrada' });
+    }
+
     const color = new Color({ name, hex });
     const newColor = await color.save();
     res.status(201).json(newColor);
@@ -91,14 +101,20 @@ app.post('/api', async (req, res) => {
 
 // PUT MODULES
 
-app.put('/api/:id', async (req, res) => {
-  const { name, hex } = req.body;
+app.put('/api/:name', async (req, res) => {
+  const { name } = req.params;
+  const { hex } = req.body;
+
   try {
-    const updatedColor = await Color.findByIdAndUpdate(req.params.id, { name, hex }, { new: true });
-    if (!updatedColor) {
-      return res.status(404).json({ message: 'Color not found' });
+    const color = await Color.findOne({ name });
+    if (!color) {
+      return res.status(404).json({ message: 'Cor não encontrada' });
     }
-    res.json(updatedColor);
+
+    color.hex = hex;
+    const updatedColor = await color.save();
+
+    res.json(updatedColor); // Retornar a cor atualizada como resposta
   } catch (err) {
     res.status(400).json({ message: err.message });
   }
@@ -106,15 +122,18 @@ app.put('/api/:id', async (req, res) => {
 
 // DELETE MODULES
 
-app.delete('/api/:id', async (req, res) => {
+app.delete('/api/:name', async (req, res) => {
+  const name = req.params.name;
+
   try {
-    const color = await Color.findByIdAndDelete(req.params.id);
+    const color = await Color.findOne({ name });
     if (!color) {
-      return res.status(404).json({ message: 'Color not found' });
+      return res.status(404).json({ message: 'Cor não encontrada' });
     }
-    res.json({ message: 'Color deleted' });
-  } catch (err) {
-    res.status(500).json({ message: err.message });
+    await Color.deleteOne({ name });
+    res.status(200).json({ message: 'Cor excluída com sucesso' });
+  } catch (error) {
+    res.status(500).json({ message: error.message });
   }
 });
 

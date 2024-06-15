@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
+
 const ColorList = () => {
   const [colors, setColors] = useState([]);
 
@@ -20,16 +21,22 @@ const ColorList = () => {
     fetchData();
   }, []);
 
+  const handleButtonClick = () => {
+    fetchColors();
+  };
+
   return (
     <div>
       <h2>Colors</h2>
-      <ul>
+      <ul className='list'>
         {colors.map((color) => (
           <li key={color._id}>
+            <span style={{ backgroundColor: color.hex }} className="color-block"></span>
             {color.name} - {color.hex}
           </li>
         ))}
       </ul>
+      <button onClick={handleButtonClick}>Atualizar Lista</button>
     </div>
   );
 };
