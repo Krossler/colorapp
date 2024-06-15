@@ -1,4 +1,4 @@
-🎨 API CRUD de Colores
+API CRUD de Colores
 
 Esta API te permite gestionar una lista de colores con operaciones CRUD (Crear, Leer, Actualizar y Eliminar) en una base de datos MongoDB.
 
@@ -9,7 +9,7 @@ Incluye sistemas de validación para las solicitudes POST y PUT. Los códigos de
 
 Si el color ya existe en la base de datos, la inserción o actualización también se rechazará.
 
-🚀 Tecnologías
+Tecnologías
 
 Node.js
 
