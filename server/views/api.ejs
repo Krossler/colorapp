@@ -4,10 +4,12 @@
     <link rel="stylesheet" type="text/css" href="/styles.css" />
 </head>
 <body>
-    <nav>
+    <nav> 
         <ul class="navbar">
             <li><a href="/">Home</a></li>
             <li><a href="/apicolors">API</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/tutorial">Tutorials</a></li>
             <li><a target="_blank" href="https://github.com/Krossler/colorapp">GitHub</a></li>
         </ul>
     </nav>
@@ -17,7 +19,6 @@
     </section>
 
     <section class="color-list">
-        <h2>Colors</h2>
         <ul>
             <% colors.forEach(color => { %>
                 <li class="color-item">

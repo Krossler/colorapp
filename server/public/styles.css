@@ -13,9 +13,9 @@ body{
     display: flex;
     flex-direction: column;
     margin: 0 auto;
-    background: linear-gradient(270deg, #080010, #00021f, #060f1f, #1d122d);
-    background-size: 200% 200%;
-    animation: moveBackground 10s ease infinite;
+    background: linear-gradient(270deg, #000000, #010316, #020813, #05010c, #03020b, #010316, #01040b, #05000c);
+    background-size: 420% 420%;
+    animation: moveBackground 30s ease infinite;
 }
 
 @keyframes moveBackground {
@@ -73,8 +73,8 @@ body{
 }
 
 .navbar a:hover{
-    color: rgb(150, 150, 150);
-    text-decoration: 1.5px underline rgb(164, 164, 164);
+    color: rgb(107, 74, 185);
+    text-decoration: 1.5px underline rgb(107, 74, 185);
 }
 
 .header{
@@ -82,14 +82,11 @@ body{
 }
 
 .content {
-    padding: 10px;
+    padding: 20px;
     border: 1px solid rgba(255, 255, 255, 0.29);
     background: rgba(255, 255, 255, 0.044);
     border-radius: 15px;
-}
-
-.content div{
-    margin-top: 30px;
+    margin-top: 24px;
 }
 
 
@@ -106,12 +103,13 @@ h1{
 }
 
 h2{
-    font-weight: 600;
-    font-size: 18px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 40px;
+    text-decoration: none;
+    color: rgb(220, 220, 220);
+    font-size: 16px;
+    font-weight: 500;
+    text-decoration: 1.5px underline transparent;
+    text-underline-offset: 2px;
+    transition: 0.3s ease;
 }
 
 h3{
@@ -119,6 +117,7 @@ h3{
     color: rgb(73, 191, 110);
     margin-top: 10px;
     font-size: 16px;
+    color: ;
 }
 
 p{
@@ -134,6 +133,7 @@ p{
     border-radius: 10px;
     padding: 20px;
     text-align: center;
+    margin-top: 24px;
 }
 
 .color-list ul {
